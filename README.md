@@ -28,4 +28,4 @@ Note: The kibana dashboard can be customized to fit your needs.
 By default all data will be persistently stored in `/data/elk/`. Indexed events older than 90 days will be deleted. You can adjust this behavior in `/etc/crontab` to fit your needs, but be advised to provide enough RAM and free disk-space if you wish to do so.
 
 
-![Multi-Honeypots Dashboard](https://raw.githubusercontent.com/douwanhu/docker-elk/master/doc/dashboard.png)
+[Multi-Honeypots Dashboard](https://raw.githubusercontent.com/douwanhu/docker-elk/master/doc/dashboard.png)
