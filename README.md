@@ -5,7 +5,7 @@
 
 This repository contains the necessary files to create a *dockerized* version of the elk stack.
 
-This dockerized version is part of the **[Multi-Honeypots]** of Deutsche Telekom AG.
+This dockerized version is part of the **[Multi-Honeypots]** of douwanhu.
 
 The `Dockerfile` contains the blueprint for the dockerized elk stack and will be used to setup the docker image.  
 
@@ -22,12 +22,10 @@ systemctl start elk
 
 This will make sure that the docker container is started with the appropriate permissions and port mappings. Further, it autostarts during boot.
 
-Starting with T-Pot 16.10 you can simply access the kibana dashboard by browsing to ``https://<your.ip>:64297`` and enter your web user credentials.
 
 Note: The kibana dashboard can be customized to fit your needs.
 
 By default all data will be persistently stored in `/data/elk/`. Indexed events older than 90 days will be deleted. You can adjust this behavior in `/etc/crontab` to fit your needs, but be advised to provide enough RAM and free disk-space if you wish to do so.
 
-# T-Pot Dashboard
 
-![T-Pot Dashboard](https://raw.githubusercontent.com/douwanhu/docker-elk/master/doc/dashboard.png)
+![Multi-Honeypots Dashboard](https://raw.githubusercontent.com/douwanhu/docker-elk/master/doc/dashboard.png)
