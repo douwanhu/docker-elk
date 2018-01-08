@@ -1,31 +1,10 @@
 # dockerized elk stack
 
 
-[elk](http://www.elasticsearch.org/overview/) is a stack combining elasticsearch, logstash and the kibana dashboard. It is used to structure and vizualize data in realtime.
+[elk](http://www.elasticsearch.org/overview/) 是整合了elasticsearch logstash kibana的日志处理系统<br>
+针对海量日志数据进行搜索归类并支持定制成可视dashboard。多蜜罐系统集成此系统统计威胁数据，出具可视化<br>
+报告，对elasticsearch-2.4.1 logstash-2.4.0_all kibana-4.6.2-amd64制作docker镜像，定制了UI界面、可视化视图<br>
+和各个蜜罐独立的dashboard。可以通过修改配置实现与第三方SIEM系统的对接。<br>
+# Multi-Honeypots Dashboard
 
-This repository contains the necessary files to create a *dockerized* version of the elk stack.
-
-This dockerized version is part of the **[Multi-Honeypots]** of douwanhu.
-
-The `Dockerfile` contains the blueprint for the dockerized elk stack and will be used to setup the docker image.  
-
-Further, `elasticsearch.yml`, `logstash.conf`, `elkbase.tar.gz`, `elk.ico` and `kibana.svg`,  are all tailored to fit the Multi-Honeypots environment.
-
-The `supervisord.conf` is used to start elk under supervision of supervisord.
-
-Using systemd, copy the `systemd/elk.service` to `/etc/systemd/system/elk.service` and start using
-
-```
-systemctl enable elk
-systemctl start elk
-```
-
-This will make sure that the docker container is started with the appropriate permissions and port mappings. Further, it autostarts during boot.
-
-
-Note: The kibana dashboard can be customized to fit your needs.
-
-By default all data will be persistently stored in `/data/elk/`. Indexed events older than 90 days will be deleted. You can adjust this behavior in `/etc/crontab` to fit your needs, but be advised to provide enough RAM and free disk-space if you wish to do so.
-
-
-[Multi-Honeypots Dashboard](https://raw.githubusercontent.com/douwanhu/docker-elk/master/doc/dashboard.png)
+![Multi-Honeypots Dashboard](https://raw.githubusercontent.com/dtag-dev-sec/elk/master/doc/dashboard.png)
